@@ -9,8 +9,7 @@ export default function defaultText({
 	complementar,
 	temConteudo,
 }) {
-	return `
-📆 Data: ${getNowDate()}
+	return `📆 Data: ${getNowDate()}
 😃 Turma: ${turma}
 📚 Tema Aula: ${temaAula}
 🧰 Ferramenta: ${ferramenta.nome}

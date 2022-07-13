@@ -4,8 +4,8 @@ import professores from '../db/professores.json' assert { type: 'json' }
 import ferramentas from '../db/ferramentas.json' assert { type: 'json' }
 
 const btn = document.querySelector('#gerar-texto')
-const text = document.querySelector('#texto')
 const textareas = document.querySelectorAll('textarea.form-control')
+const alert = document.querySelector('.alert')
 
 btn.addEventListener('click', () => {
 	let form = getForm()
@@ -22,6 +22,7 @@ btn.addEventListener('click', () => {
 	delete form.ferramenta
 
 	form = { ...form, professor, ferramenta, temConteudo }
-	console.log(form)
-	console.log((text.innerText = defaultText(form)))
+	navigator.clipboard.writeText(defaultText(form))
+	alert.classList.remove('invisible')
+	setTimeout(() => alert.classList.add('invisible'), 2000)
 })
