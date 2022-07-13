@@ -1,5 +1,5 @@
 export default function defaultText({
-	prof,
+	professor,
 	ferramenta,
 	turma,
 	temaAula,
@@ -7,32 +7,28 @@ export default function defaultText({
 	projeto,
 	desafio,
 	complementar,
+	temConteudo,
 }) {
 	return `
 📆 Data: ${getNowDate()}
 😃 Turma: ${turma}
 📚 Tema Aula: ${temaAula}
-🧰 Ferramenta: ${ferramenta}
+🧰 Ferramenta: ${ferramenta.nome}
 
-👩‍🏫👨‍🏫💬 Olá pais, mães e responsáveis! É a professor/a *${prof}* passando o feedback da aula! 🪄
-
-*O que fizemos hoje em aula?*
-${aula}
-
-*Sobre o projeto*
-${projeto}
-
+${
+	professor.pronome === 'ele/dele' ? '👨‍🏫' : '👩‍🏫'
+}💬 Olá pais, mães e responsáveis! É ${
+		professor.pronome === 'ele/dele' ? 'o professor' : 'a professora'
+	} *${professor.nome}* passando o feedback da aula! 🪄
+${temConteudo[0] ? `\n*O que fizemos hoje em aula?*\n${aula}\n` : ''}${temConteudo[1] ? `\n*Sobre o projeto*\n${projeto}\n` : ''}
 *Qual ferramenta usamos e como acessar/instalar?*
-Utilizamos ${ferramenta}, é instalado no computador.
-Link: https://www.kodugamelab.com/
-Vídeo explicando como instalar: https://www.youtube.com/watch?v=NzML0GCg57k
-
-👨‍💻👩‍💻*Qual Desafio para a próxima aula?*
-${desafio}
-
-*Prática complementar recomendada para semana*: 
-${complementar}
-
+Utilizamos ${ferramenta.nome}, é ${
+		ferramenta.download
+			? 'instalado no computador'
+			: 'acessado no navegador (ex: Google Chrome)'
+	}.
+Link: ${ferramenta.links.link}
+${temConteudo[2] ? `\n${professor.pronome === 'ele/dele' ? '👨‍💻' : '👩‍💻'} *Qual Desafio para a próxima aula?*\n${desafio}\n` : ''} ${temConteudo[3] ? `\n*Prática complementar recomendada para semana*\n${complementar}\n` : ''}
 Em caso de dúvidas, chama a gente.
 Desejamos bons estudos e uma ótima semana!
 `
@@ -45,5 +41,7 @@ function getNowDate() {
 	const year = today.getFullYear()
 	const separator = '/'
 
-	return `${date < 10 ? '0' + date : date}${separator}${month < 10 ? '0' + month : month}${separator}${year}`
+	return `${date < 10 ? '0' + date : date}${separator}${
+		month < 10 ? '0' + month : month
+	}${separator}${year}`
 }

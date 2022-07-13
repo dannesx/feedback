@@ -1,0 +1,219 @@
+[
+	{
+		"id": 1,
+		"nome": "App Inventor",
+		"links": {
+			"link": "https://appinventor.mit.edu/"
+		},
+		"download": false,
+		"tutorial": null
+	},
+	{
+		"id": 2,
+		"nome": "Arduino",
+		"links": {
+			"link": "https://www.arduino.cc/pt/software/",
+			"simulador": "https://www.tinkercad.com/dashboard/"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 3,
+		"nome": "Blender",
+		"links": {
+			"link": "https://www.blender.org/download/"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 4,
+		"nome": "Blockly",
+		"links": {
+			"link": "https://blockly.games/"
+		},
+		"download": false,
+		"tutorial": "none"
+	},
+	{
+		"id": 5,
+		"nome": "Construct 3",
+		"links": {
+			"link": "https://editor.construct.net/"
+		},
+		"download": false,
+		"tutorial": "none"
+	},
+	{
+		"id": 6,
+		"nome": "Game Maker",
+		"links": {
+			"link": "https://gamemaker.io/pt-BR/"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 7,
+		"nome": "GameFroot",
+		"links": {
+			"link": "https://make.gamefroot.com/dashboard/home/"
+		},
+		"download": false,
+		"tutorial": "none"
+	},
+	{
+		"id": 8,
+		"nome": "Godot",
+		"links": {
+			"link": "https://godotengine.org/download/"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 9,
+		"nome": "Javascript",
+		"links": {
+			"link": "https://developer.mozilla.org/pt-BR/"
+		},
+		"download": false,
+		"tutorial": "none"
+	},
+	{
+		"id": 10,
+		"nome": "Kodu",
+		"links": {
+			"link": "https://www.kodugamelab.com/downloads/"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 11,
+		"nome": "LMMS",
+		"links": {
+			"link": "https://lmms.io/download/"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 12,
+		"nome": "MagicaVoxel",
+		"links": {
+			"link": "https://ephtracy.github.io/"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 13,
+		"nome": "Micro:bit",
+		"links": {
+			"link": "https://makecode.microbit.org/"
+		},
+		"download": false,
+		"tutorial": "none"
+	},
+	{
+		"id": 14,
+		"nome": "MySQL",
+		"links": {
+			"link": "https://dev.mysql.com/doc/"
+		},
+		"download": false,
+		"tutorial": "none"
+	},
+	{
+		"id": 15,
+		"nome": "PHP",
+		"links": {
+			"link": "https://www.php.net/downloads"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 16,
+		"nome": "Piskel",
+		"links": {
+			"link": "https://www.piskelapp.com/p/create/sprite/"
+		},
+		"download": false,
+		"tutorial": "none"
+	},
+	{
+		"id": 17,
+		"nome": "Python",
+		"links": {
+			"link": "https://www.python.org/downloads/"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 18,
+		"nome": "Replit",
+		"links": {
+			"link": "https://replit.com/~/"
+		},
+		"download": false,
+		"tutorial": "none"
+	},
+	{
+		"id": 19,
+		"nome": "Roblox",
+		"links": {
+			"link": "https://www.roblox.com/create/"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 20,
+		"nome": "Scratch",
+		"links": {
+			"link": "https://scratch.mit.edu/projects/editor/"
+		},
+		"download": false,
+		"tutorial": "none"
+	},
+	{
+		"id": 21,
+		"nome": "Stencyl",
+		"links": {
+			"link": "https://www.stencyl.com/download/"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 22,
+		"nome": "Tinkercad",
+		"links": {
+			"link": "https://www.tinkercad.com/dashboard/"
+		},
+		"download": false,
+		"tutorial": "none"
+	},
+	{
+		"id": 23,
+		"nome": "Unity",
+		"links": {
+			"link": "https://unity.com/pt/download"
+		},
+		"download": true,
+		"tutorial": "none"
+	},
+	{
+		"id": 24,
+		"nome": "VSCode",
+		"links": {
+			"link": "https://code.visualstudio.com/download"
+		},
+		"download": true,
+		"tutorial": "none"
+	}
+]
