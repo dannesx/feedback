@@ -3,11 +3,14 @@ import defaultText from './defaultText.js'
 import professores from '../db/professores.json' assert { type: 'json' }
 import ferramentas from '../db/ferramentas.json' assert { type: 'json' }
 
-const btn = document.querySelector('#gerar-texto')
+const gerarTextoBtn = document.querySelector('#gerar-texto')
+const limparCamposBtn = document.querySelector('#limpar-campos')
+const turmaInput = document.querySelector('#turma')
+const temaInput = document.querySelector('#tema')
 const textareas = document.querySelectorAll('textarea.form-control')
 const alert = document.querySelector('.alert')
 
-btn.addEventListener('click', () => {
+gerarTextoBtn.addEventListener('click', () => {
 	let form = getForm()
 	let temConteudo = []
 
@@ -23,6 +26,12 @@ btn.addEventListener('click', () => {
 
 	form = { ...form, professor, ferramenta, temConteudo }
 	navigator.clipboard.writeText(defaultText(form))
-	alert.classList.remove('invisible')
-	setTimeout(() => alert.classList.add('invisible'), 2000)
+	alert.classList.add('show')
+	setTimeout(() => alert.classList.remove('show'), 2000)
+})
+
+limparCamposBtn.addEventListener('click', () => {
+	turmaInput.value = ''
+	temaInput.value = ''
+	textareas.forEach(txt => (txt.value = ''))
 })
