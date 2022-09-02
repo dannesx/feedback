@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Feedback - Aula Experimental</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+		/>
+		<link
+			rel="icon"
+			href="https://ctrlplay.com.br/wp-content/uploads/2021/05/cropped-favicon-32x32.png"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			href="https://ctrlplay.com.br/wp-content/uploads/2021/05/cropped-favicon-192x192.png"
+			sizes="192x192"
+		/>
+	</head>
+	<body class="bg-dark">
+		<main class="container-md">
+			<div class="d-grid justify-content-start">
+				<a href="index.html" class="btn btn-link">Voltar ao Início</a>
+			</div>
+			<form class="mx-auto bg-light px-5 py-4 mt-3 mb-5 rounded form-switch">
+				<h1 class="mb-4 text-center">Feedback - Aula Experimental ✨🚀</h1>
+
+				<div class="row mb-3">
+					<div class="col">
+						<label for="nome-aluno" class="form-label">Nome do Aluno</label>
+						<input
+							type="text"
+							name="nome-aluno"
+							id="nome-aluno"
+							class="form-control"
+							placeholder="Apenas primeiro nome ou nome composto"
+						/>
+					</div>
+
+					<div class="col-3">
+						<label for="itch-io" class="form-label">Itch.io</label>
+						<input
+							type="text"
+							name="itch-io"
+							id="itch-io"
+							class="form-control"
+							placeholder="Link do projeto publicado"
+						/>
+					</div>
+
+					<div class="col-3">
+						<label for="google-drive" class="form-label">Google Drive</label>
+						<input
+							type="text"
+							name="google-drive"
+							id="google-drive"
+							class="form-control"
+							placeholder="Link do arquivo do projeto"
+						/>
+					</div>
+				</div>
+
+				<div class="row mb-3">
+					<div class="d-grid">
+						<button class="btn btn-success">Gerar texto para Whatsapp</button>
+					</div>
+				</div>
+
+				<hr class="my-4" />
+
+				<div class="row mb-3">
+					<div class="col">
+						<label for="modulo" class="form-label">Módulo ideal</label>
+						<input
+							type="text"
+							name="modulo"
+							id="modulo"
+							class="form-control"
+							placeholder="Pense em pelo menos duas opções"
+						/>
+					</div>
+
+					<div class="col-3">
+						<label for="desempenho" class="form-label"
+							>Desempenho do Aluno</label
+						>
+						<select name="desempenho" id="desempenho" class="form-select">
+							<option value="" selected></option>
+							<option value="0">Péssimo</option>
+							<option value="1">Ruim</option>
+							<option value="2">Regular</option>
+							<option value="3">Bom</option>
+							<option value="4">Ótimo</option>
+							<option value="5">Excelente</option>
+						</select>
+					</div>
+
+					<div class="col-3">
+						<label for="code" class="form-label">Nível do Code</label>
+						<input type="number" name="code" id="code" class="form-control" />
+					</div>
+				</div>
+
+				<div class="row mb-3">
+					<div class="col">
+						<label for="sugestao" class="form-label">Sugestão de Turma</label>
+						<textarea
+							name="sugestao"
+							id="sugestao"
+							class="form-control"
+							placeholder="Verifique a tabela de turmas abertas"
+						></textarea>
+					</div>
+				</div>
+
+				<div class="row mb-3">
+					<div class="col">
+						<label for="dificuldades" class="form-label">Dificuldades</label>
+						<textarea
+							name="dificuldades"
+							id="dificuldades"
+							class="form-control"
+							placeholder="Cite os pontos de dificuldade do aluno. Se não houve nenhuma dificuldade, não preencha este campo"
+						></textarea>
+					</div>
+				</div>
+
+				<div class="row mb-3">
+					<div class="col">
+						<label for="ponto-atencao">Ponto de Atenção</label>
+						<textarea
+							name="ponto-atencao"
+							id="ponto-atencao"
+							class="form-control"
+							placeholder="Percebeu algum ponto de atenção no aluno? Caso não, não preencha este campo"
+						></textarea>
+					</div>
+				</div>
+
+				<div class="row mb-4">
+					<div class="col">
+						<label for="declaracoes" class="form-label"
+							>Declarações Finais</label
+						>
+						<textarea
+							name="declaracoes"
+							id="declaracoes"
+							class="form-control"
+							placeholder="Opcional. Informe aqui outros pontos relevantes sobre o aluno"
+						></textarea>
+					</div>
+				</div>
+
+				<div class="row mb-3">
+					<div class="d-grid col-6">
+						<button class="btn btn-outline-danger">Limpar campos</button>
+					</div>
+					<div class="d-grid col-6">
+						<button class="btn btn-primary">Gerar texto</button>
+					</div>
+				</div>
+			</form>
+		</main>
+		<div
+			class="alert alert-success position-fixed end-0 top-0 m-4 fade"
+			role="alert"
+		>
+			Texto copiado para a área de transferência!
+		</div>
+		<script type="module" src="js/ae.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
