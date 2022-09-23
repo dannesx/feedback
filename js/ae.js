@@ -1,17 +1,29 @@
-const inputs = document.querySelectorAll('input')
-const textareas = document.querySelectorAll('textarea')
-const buttons = document.querySelectorAll('button')
+import getWhatsapp from './functions/getWhatsapp.js'
+import getExperimental from './functions/getExperimental.js'
+import { url } from './modules/whatsappText.js'
+import desempenhos from '../db/desempenho.json' assert { type: 'json' }
 
-inputs.forEach(input => {
-	input.setAttribute('disabled', 'true')
+const whatsappBtn = document.querySelector('#whatsapp')
+const gerarTextoBtn = document.querySelector('#gerar-texto')
+const limparCamposBtn = document.querySelector('#limpar-campos')
+
+// BLOCKED
+let blocked = Array.from(document.querySelectorAll('form input'))
+blocked = [...blocked, ...document.querySelectorAll('form textarea'), ...document.querySelectorAll('form select')]
+blocked = blocked.slice(3)
+blocked.forEach(block => block.setAttribute('disabled', 'true'))
+// END
+
+whatsappBtn.addEventListener('click', e => {
+	e.preventDefault()
+	let form = getWhatsapp()
+
+	window.open(url(form))
 })
 
-textareas.forEach(txtarea => {
-	txtarea.setAttribute('disabled', 'true')
-})
+gerarTextoBtn.addEventListener('click', e => {
+	e.preventDefault()
+	let form = getExperimental()
 
-buttons.forEach(button => {
-	button.setAttribute('disabled', 'true')
+	console.log(form)
 })
-
-document.querySelector('select').setAttribute('disabled', 'true')
