@@ -5,7 +5,6 @@ import ferramentas from '../db/ferramentas.json' assert { type: 'json' }
 
 const gerarTextoBtn = document.querySelector('#gerar-texto')
 const limparCamposBtn = document.querySelector('#limpar-campos')
-const turmaInput = document.querySelector('#turma')
 const temaInput = document.querySelector('#tema')
 const textareas = document.querySelectorAll('textarea.form-control')
 const alert = document.querySelector('.alert')
@@ -31,7 +30,6 @@ gerarTextoBtn.addEventListener('click', () => {
 })
 
 limparCamposBtn.addEventListener('click', () => {
-	turmaInput.value = ''
 	temaInput.value = ''
 	textareas.forEach(txt => (txt.value = ''))
 })
