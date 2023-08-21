@@ -1,5 +1,7 @@
 import getForm from './functions/getForm.js'
 import defaultText from './modules/defaultText.js'
+
+const baseUrl = "https://dannesx.github.io/feedback/db/"
 let professores
 let ferramentas
 
@@ -36,7 +38,7 @@ limparCamposBtn.addEventListener('click', () => {
 
 window.addEventListener("load", async () => {
 	gerarTextoBtn.setAttribute("disabled", true)
-	professores = await fetch("../db/professores.json").then(res => res.json())
-	ferramentas = await fetch("../db/ferramentas.json").then(res => res.json())
+	professores = await fetch(`${baseUrl}/professores.json`).then(res => res.json())
+	ferramentas = await fetch(`${baseUrl}/ferramentas.json`).then(res => res.json())
 	gerarTextoBtn.removeAttribute("disabled")
 })
