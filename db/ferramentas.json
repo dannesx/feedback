@@ -215,5 +215,13 @@
 		},
 		"download": true,
 		"tutorial": "none"
+	},
+	{
+		"nome": "React",
+		"links": {
+			"link": "https://react.dev/"
+		},
+		"download": true,
+		"tutorial": "none"
 	}
 ]

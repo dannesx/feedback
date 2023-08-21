@@ -7,8 +7,7 @@ export default function defaultText({
 	complementar,
 	temConteudo,
 }) {
-	return `📆 Data: ${getNowDate()}
-📚 Tema Aula: ${temaAula}
+	return `📚 Tema Aula: ${temaAula}
 🧰 Ferramenta: ${ferramenta.nome}
 
 ${
@@ -28,16 +27,4 @@ Link: ${ferramenta.links.link}
 Em caso de dúvidas, chama a gente.
 Desejamos bons estudos e uma ótima semana!
 `
-}
-
-function getNowDate() {
-	const today = new Date()
-	const date = today.getDate()
-	const month = today.getMonth() + 1
-	const year = today.getFullYear()
-	const separator = '/'
-
-	return `${date < 10 ? '0' + date : date}${separator}${
-		month < 10 ? '0' + month : month
-	}${separator}${year}`
 }

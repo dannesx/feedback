@@ -1,7 +1,7 @@
 import getForm from './functions/getForm.js'
 import defaultText from './modules/defaultText.js'
-import professores from '../db/professores.json' assert { type: 'json' }
-import ferramentas from '../db/ferramentas.json' assert { type: 'json' }
+let professores
+let ferramentas
 
 const gerarTextoBtn = document.querySelector('#gerar-texto')
 const limparCamposBtn = document.querySelector('#limpar-campos')
@@ -23,8 +23,8 @@ gerarTextoBtn.addEventListener('click', () => {
 	delete form.prof
 	delete form.ferramenta
 
-	form = { ...form, professor, ferramenta, temConteudo }
-	navigator.clipboard.writeText(defaultText(form))
+	let text = defaultText({ ...form, professor, ferramenta, temConteudo })
+	navigator.clipboard.writeText(text)
 	alert.classList.add('show')
 	setTimeout(() => alert.classList.remove('show'), 2000)
 })
@@ -32,4 +32,11 @@ gerarTextoBtn.addEventListener('click', () => {
 limparCamposBtn.addEventListener('click', () => {
 	temaInput.value = ''
 	textareas.forEach(txt => (txt.value = ''))
+})
+
+window.addEventListener("load", async () => {
+	gerarTextoBtn.setAttribute("disabled", true)
+	professores = await fetch("../db/professores.json").then(res => res.json())
+	ferramentas = await fetch("../db/ferramentas.json").then(res => res.json())
+	gerarTextoBtn.removeAttribute("disabled")
 })
