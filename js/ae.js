@@ -1,29 +1,17 @@
 import getWhatsapp from './functions/getWhatsapp.js'
-import getExperimental from './functions/getExperimental.js'
-import { url } from './modules/whatsappText.js'
-import desempenhos from '../db/desempenho.json' assert { type: 'json' }
+import whatsappText from './modules/whatsappText.js'
 
 const whatsappBtn = document.querySelector('#whatsapp')
-const gerarTextoBtn = document.querySelector('#gerar-texto')
 const limparCamposBtn = document.querySelector('#limpar-campos')
-
-// BLOCKED
-let blocked = Array.from(document.querySelectorAll('form input'))
-blocked = [...blocked, ...document.querySelectorAll('form textarea'), ...document.querySelectorAll('form select')]
-blocked = blocked.slice(3)
-blocked.forEach(block => block.setAttribute('disabled', 'true'))
-// END
+const alert = document.querySelector('.alert')
 
 whatsappBtn.addEventListener('click', e => {
 	e.preventDefault()
 	let form = getWhatsapp()
 
-	window.open(url(form))
-})
+	let text = whatsappText(form)
 
-gerarTextoBtn.addEventListener('click', e => {
-	e.preventDefault()
-	let form = getExperimental()
-
-	console.log(form)
+	navigator.clipboard.writeText(text)
+	alert.classList.add('show')
+	setTimeout(() => alert.classList.remove('show'), 2000)
 })
