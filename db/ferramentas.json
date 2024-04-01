@@ -2,136 +2,163 @@
 	{
 		"id": 1,
 		"nome": "App Inventor",
-		"link": "https://appinventor.mit.edu/"
+		"link": "https://appinventor.mit.edu/",
+		"online": true
 	},
 	{
 		"id": 2,
 		"nome": "Arduino",
-		"link": "https://www.arduino.cc/"
+		"link": "https://www.arduino.cc/",
+		"online": false
 	},
 	{
 		"id": 3,
 		"nome": "Blender",
-		"link": "https://www.blender.org/"
+		"link": "https://www.blender.org/",
+		"online": false
 	},
 	{
 		"id": 4,
 		"nome": "Code",
-		"link": "https://code.org/"
+		"link": "https://code.org/",
+		"online": true
 	},
 	{
 		"id": 5,
 		"nome": "Construct 3",
-		"link": "https://editor.construct.net/"
+		"link": "https://editor.construct.net/",
+		"online": true
 	},
 	{
 		"id": 6,
 		"nome": "CSS",
-		"link": "https://developer.mozilla.org/"
+		"link": "https://developer.mozilla.org/",
+		"online": true
 	},
 	{
 		"id": 7,
 		"nome": "GameFroot",
-		"link": "https://make.gamefroot.com/"
+		"link": "https://make.gamefroot.com/",
+		"online": true
 	},
 	{
 		"id": 8,
 		"nome": "Game Maker",
-		"link": "https://gamemaker.io/"
+		"link": "https://gamemaker.io/",
+		"online": false
 	},
 	{
 		"id": 9,
 		"nome": "Godot",
-		"link": "https://godotengine.org/"
+		"link": "https://godotengine.org/",
+		"online": false
 	},
 	{
 		"id": 10,
 		"nome": "HTML",
-		"link": "https://developer.mozilla.org/"
+		"link": "https://developer.mozilla.org/",
+		"online": true
 	},
 	{
 		"id": 11,
 		"nome": "Javascript",
-		"link": "https://developer.mozilla.org/"
+		"link": "https://developer.mozilla.org/",
+		"online": true
 	},
 	{
 		"id": 12,
 		"nome": "Kodu Game Lab",
-		"link": "https://www.kodugamelab.com/"
+		"link": "https://www.kodugamelab.com/",
+		"online": false
 	},
 	{
 		"id": 13,
 		"nome": "LMMS",
-		"link": "https://lmms.io/"
+		"link": "https://lmms.io/",
+		"online": false
 	},
 	{
 		"id": 14,
 		"nome": "MagicaVoxel",
-		"link": "https://ephtracy.github.io/"
+		"link": "https://ephtracy.github.io/",
+		"online": false
 	},
 	{
 		"id": 15,
 		"nome": "MySQL",
-		"link": "https://www.mysql.com/"
+		"link": "https://www.mysql.com/",
+		"online": false
 	},
 	{
 		"id": 16,
 		"nome": "Node.js",
-		"link": "https://nodejs.org/"
+		"link": "https://nodejs.org/",
+		"online": false
 	},
 	{
 		"id": 17,
 		"nome": "PHP",
-		"link": "https://www.php.net/"
+		"link": "https://www.php.net/",
+		"online": false
 	},
 	{
 		"id": 18,
 		"nome": "Piskel",
-		"link": "https://www.piskelapp.com/"
+		"link": "https://www.piskelapp.com/",
+		"online": true
 	},
 	{
 		"id": 19,
 		"nome": "Python",
-		"link": "https://www.python.org/"
+		"link": "https://www.python.org/",
+		"online": false
 	},
 	{
 		"id": 20,
 		"nome": "React",
-		"link": "https://react.dev/"
+		"link": "https://react.dev/",
+		"online": false
 	},
 	{
 		"id": 21,
 		"nome": "Replit",
-		"link": "https://replit.com/"
+		"link": "https://replit.com/",
+		"online": true
 	},
 	{
 		"id": 22,
 		"nome": "Roblox Studio",
-		"link": "https://create.roblox.com/"
+		"link": "https://create.roblox.com/",
+		"online": false
 	},
 	{
 		"id": 23,
 		"nome": "Scratch",
-		"link": "https://scratch.mit.edu/"
+		"link": "https://scratch.mit.edu/",
+		"online": true
 	},
 	{
 		"id": 24,
 		"nome": "Stencyl",
-		"link": "https://www.stencyl.com/"
+		"link": "https://www.stencyl.com/",
+		"online": true
 	},
 	{
 		"id": 25,
 		"nome": "Tinkercad",
-		"link": "https://www.tinkercad.com/"
+		"link": "https://www.tinkercad.com/",
+		"online": true
 	},
 	{
 		"id": 26,
 		"nome": "Typescript",
-		"link": "https://www.typescriptlang.org/"
+		"link": "https://www.typescriptlang.org/",
+		"online": true
 	},
 	{
 		"id": 27,
 		"nome": "Unity",
-		"link": "https://unity.com/"
+		"link": "https://unity.com/",
+		"online": false
 	}
 ]

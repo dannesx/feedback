@@ -2,16 +2,17 @@ export default function defaultText({
 	ferramenta,
 	temaAula,
 	aula,
-	desafio
+	desafio,
+	recomendada,
 }) {
-	return `💫 *${temaAula ? temaAula : "Resumo da Aula"}* 🚀
+	return `⭐ *${temaAula ? `Tema: ${temaAula}` : 'Resumo da Aula'}* ⭐
 ${aula}
 	
 📢 *Desafio da Semana* 📢
-${desafio}
+${desafio}${recomendada ? `\n🚨 *Extra:* ${recomendada}` : ""}
 	
 🧰 *Ferramenta:* ${ferramenta.nome}
 🔗 *Link:* ${ferramenta.link}
 
-_Desejamos bons estudos e uma ótima semana!_ ✨🚀`
+_Bons estudos e uma ótima semana!_ ✨🚀`
 }
