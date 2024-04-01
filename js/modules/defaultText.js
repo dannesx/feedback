@@ -11,5 +11,7 @@ ${aula}
 ${desafio}
 	
 🧰 *Ferramenta:* ${ferramenta.nome}
-🔗 *Link:* ${ferramenta.link}`
+🔗 *Link:* ${ferramenta.link}
+
+_Desejamos bons estudos e uma ótima semana!_ ✨🚀`
 }
