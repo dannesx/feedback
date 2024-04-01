@@ -26,72 +26,27 @@
 		<main class="container-md">
 			<div class="row d-flex justify-content-center">
 				<div class="col-sm-10 col-md-8">
-					
 					<form
 						class="mx-auto bg-light px-5 py-4 mt-3 mb-5 rounded form-switch"
 					>
 						<h1 class="mb-4 text-center">Feedback ✨🚀</h1>
 						<div class="row">
-							<div class="col-12 col-md-6 mb-2">
-								<label for="prof" class="form-label">Professor(a)</label>
-								<select
-									name="prof"
-									id="prof"
-									class="form-select"
-									aria-label="Selecione o Professor"
-								>
-									<option selected></option>
-									<option value="1">Ana</option>
-									<option value="2">Arthur</option>
-									<option value="3">Daniel</option>
-									<option value="4">Diego</option>
-									<option value="5">Everton</option>
-									<option value="6">Felipe</option>
-									<option value="7">Matheus</option>
-									<option value="8">Rodrigo</option>
-								</select>
+							<div class="col-12 col-md mb-2">
+								<label for="tema" class="form-label">Tema da aula</label>
+								<input
+									type="text"
+									name="tema"
+									id="tema"
+									class="form-control"
+									placeholder="A última aula foi sobre..."
+								/>
 							</div>
 
 							<div class="col-12 col-md-6 mb-2">
 								<label for="ferramenta" class="form-label">Ferramenta</label>
 								<select name="ferramenta" id="ferramenta" class="form-select">
 									<option selected></option>
-									<option value="1">App Inventor</option>
-									<option value="2">Arduino</option>
-									<option value="3">Blender</option>
-									<option value="4">Blockly</option>
-									<option value="5">Code</option>
-									<option value="6">Construct 3</option>
-									<option value="7">CSS</option>
-									<option value="8">Game Maker</option>
-									<option value="9">GameFroot</option>
-									<option value="10">Godot</option>
-									<option value="11">HTML</option>
-									<option value="12">Javascript</option>
-									<option value="13">Kodu</option>
-									<option value="14">LMMS</option>
-									<option value="15">MagicaVoxel</option>
-									<option value="16">Micro:bit</option>
-									<option value="17">MySQL</option>
-									<option value="18">PHP</option>
-									<option value="19">Piskel</option>
-									<option value="20">Python</option>
-									<option value="28">React</option>
-									<option value="21">Replit</option>
-									<option value="22">Roblox</option>
-									<option value="23">Scratch</option>
-									<option value="24">Stencyl</option>
-									<option value="25">Tinkercad</option>
-									<option value="26">Unity</option>
-									<option value="27">VSCode</option>
 								</select>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-12 col-md mb-2">
-								<label for="tema" class="form-label">Tema da aula</label>
-								<input type="text" name="tema" id="tema" class="form-control" placeholder="A última aula foi sobre..."/>
 							</div>
 						</div>
 
@@ -100,21 +55,22 @@
 						<div class="row mb-3">
 							<div class="col">
 								<label class="form-label">Resumo sobre a aula</label>
-								<textarea id="aula" class="form-control" placeholder="Descreva sua aula em um parágrafo simples"></textarea>
-							</div>
-						</div>
-
-						<div class="row mb-3">
-							<div class="col">
-								<label class="form-label">Desafio</label>
-								<textarea id="desafio" class="form-control" placeholder="Qual o desafio para a próxima aula?"></textarea>
+								<textarea
+									id="aula"
+									class="form-control"
+									placeholder="Descreva sua aula em um parágrafo simples"
+								></textarea>
 							</div>
 						</div>
 
 						<div class="row mb-4">
 							<div class="col">
-								<label class="form-label">Prática complementar</label>
-								<textarea id="complementar" class="form-control" placeholder="Prática complementar recomendada para a semana (ex: treinar digitação)"></textarea>
+								<label class="form-label">Desafio</label>
+								<textarea
+									id="desafio"
+									class="form-control"
+									placeholder="Qual o desafio para a próxima aula?"
+								></textarea>
 							</div>
 						</div>
 
@@ -123,7 +79,7 @@
 								<button
 									id="limpar-campos"
 									class="btn btn-outline-danger"
-									type="button"
+									type="reset"
 								>
 									Limpar campos
 								</button>

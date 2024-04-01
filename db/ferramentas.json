@@ -1,227 +1,137 @@
 [
 	{
+		"id": 1,
 		"nome": "App Inventor",
-		"links": {
-			"link": "https://appinventor.mit.edu/"
-		},
-		"download": false,
-		"tutorial": null
+		"link": "https://appinventor.mit.edu/"
 	},
 	{
+		"id": 2,
 		"nome": "Arduino",
-		"links": {
-			"link": "https://www.arduino.cc/en/software/",
-			"simulador": "https://www.tinkercad.com/dashboard/"
-		},
-		"download": true,
-		"tutorial": "none"
+		"link": "https://www.arduino.cc/"
 	},
 	{
+		"id": 3,
 		"nome": "Blender",
-		"links": {
-			"link": "https://www.blender.org/download/"
-		},
-		"download": true,
-		"tutorial": "none"
+		"link": "https://www.blender.org/"
 	},
 	{
-		"nome": "Blockly",
-		"links": {
-			"link": "https://blockly.games/"
-		},
-		"download": false,
-		"tutorial": "none"
-	},
-	{
+		"id": 4,
 		"nome": "Code",
-		"links": {
-			"link": "https://code.org/"
-		},
-		"download": false,
-		"tutorial": "none"
+		"link": "https://code.org/"
 	},
 	{
+		"id": 5,
 		"nome": "Construct 3",
-		"links": {
-			"link": "https://editor.construct.net/"
-		},
-		"download": false,
-		"tutorial": "none"
+		"link": "https://editor.construct.net/"
 	},
 	{
+		"id": 6,
 		"nome": "CSS",
-		"links": {
-			"link": "https://developer.mozilla.org/pt-BR/docs/Web/CSS"
-		},
-		"download": false,
-		"tutorial": "none"
+		"link": "https://developer.mozilla.org/"
 	},
 	{
-		"nome": "Game Maker",
-		"links": {
-			"link": "https://gamemaker.io/pt-BR/"
-		},
-		"download": true,
-		"tutorial": "none"
-	},
-	{
+		"id": 7,
 		"nome": "GameFroot",
-		"links": {
-			"link": "https://make.gamefroot.com/dashboard/home/"
-		},
-		"download": false,
-		"tutorial": "none"
+		"link": "https://make.gamefroot.com/"
 	},
 	{
+		"id": 8,
+		"nome": "Game Maker",
+		"link": "https://gamemaker.io/"
+	},
+	{
+		"id": 9,
 		"nome": "Godot",
-		"links": {
-			"link": "https://godotengine.org/download/"
-		},
-		"download": true,
-		"tutorial": "none"
+		"link": "https://godotengine.org/"
 	},
 	{
+		"id": 10,
 		"nome": "HTML",
-		"links": {
-			"link": "https://developer.mozilla.org/pt-BR/docs/Web/HTML/"
-		},
-		"download": false,
-		"tutorial": "none"
+		"link": "https://developer.mozilla.org/"
 	},
 	{
+		"id": 11,
 		"nome": "Javascript",
-		"links": {
-			"link": "https://developer.mozilla.org/pt-BR/"
-		},
-		"download": false,
-		"tutorial": "none"
+		"link": "https://developer.mozilla.org/"
 	},
 	{
-		"nome": "Kodu",
-		"links": {
-			"link": "https://www.kodugamelab.com/downloads/"
-		},
-		"download": true,
-		"tutorial": "none"
+		"id": 12,
+		"nome": "Kodu Game Lab",
+		"link": "https://www.kodugamelab.com/"
 	},
 	{
+		"id": 13,
 		"nome": "LMMS",
-		"links": {
-			"link": "https://lmms.io/download/"
-		},
-		"download": true,
-		"tutorial": "none"
+		"link": "https://lmms.io/"
 	},
 	{
+		"id": 14,
 		"nome": "MagicaVoxel",
-		"links": {
-			"link": "https://ephtracy.github.io/"
-		},
-		"download": true,
-		"tutorial": "none"
+		"link": "https://ephtracy.github.io/"
 	},
 	{
-		"nome": "Micro:bit",
-		"links": {
-			"link": "https://makecode.microbit.org/"
-		},
-		"download": false,
-		"tutorial": "none"
-	},
-	{
+		"id": 15,
 		"nome": "MySQL",
-		"links": {
-			"link": "https://dev.mysql.com/doc/"
-		},
-		"download": false,
-		"tutorial": "none"
+		"link": "https://www.mysql.com/"
 	},
 	{
+		"id": 16,
+		"nome": "Node.js",
+		"link": "https://nodejs.org/"
+	},
+	{
+		"id": 17,
 		"nome": "PHP",
-		"links": {
-			"link": "https://www.php.net/downloads"
-		},
-		"download": true,
-		"tutorial": "none"
+		"link": "https://www.php.net/"
 	},
 	{
+		"id": 18,
 		"nome": "Piskel",
-		"links": {
-			"link": "https://www.piskelapp.com/p/create/sprite/"
-		},
-		"download": false,
-		"tutorial": "none"
+		"link": "https://www.piskelapp.com/"
 	},
 	{
+		"id": 19,
 		"nome": "Python",
-		"links": {
-			"link": "https://www.python.org/downloads/"
-		},
-		"download": true,
-		"tutorial": "none"
+		"link": "https://www.python.org/"
 	},
 	{
-		"nome": "Replit",
-		"links": {
-			"link": "https://replit.com/~/"
-		},
-		"download": false,
-		"tutorial": "none"
-	},
-	{
-		"nome": "Roblox",
-		"links": {
-			"link": "https://www.roblox.com/create/"
-		},
-		"download": true,
-		"tutorial": "none"
-	},
-	{
-		"nome": "Scratch",
-		"links": {
-			"link": "https://scratch.mit.edu/projects/editor/"
-		},
-		"download": false,
-		"tutorial": "none"
-	},
-	{
-		"nome": "Stencyl",
-		"links": {
-			"link": "https://www.stencyl.com/download/"
-		},
-		"download": true,
-		"tutorial": "none"
-	},
-	{
-		"nome": "Tinkercad",
-		"links": {
-			"link": "https://www.tinkercad.com/dashboard/"
-		},
-		"download": false,
-		"tutorial": "none"
-	},
-	{
-		"nome": "Unity",
-		"links": {
-			"link": "https://unity.com/pt/download"
-		},
-		"download": true,
-		"tutorial": "none"
-	},
-	{
-		"nome": "VSCode",
-		"links": {
-			"link": "https://code.visualstudio.com/download"
-		},
-		"download": true,
-		"tutorial": "none"
-	},
-	{
+		"id": 20,
 		"nome": "React",
-		"links": {
-			"link": "https://react.dev/"
-		},
-		"download": true,
-		"tutorial": "none"
+		"link": "https://react.dev/"
+	},
+	{
+		"id": 21,
+		"nome": "Replit",
+		"link": "https://replit.com/"
+	},
+	{
+		"id": 22,
+		"nome": "Roblox Studio",
+		"link": "https://create.roblox.com/"
+	},
+	{
+		"id": 23,
+		"nome": "Scratch",
+		"link": "https://scratch.mit.edu/"
+	},
+	{
+		"id": 24,
+		"nome": "Stencyl",
+		"link": "https://www.stencyl.com/"
+	},
+	{
+		"id": 25,
+		"nome": "Tinkercad",
+		"link": "https://www.tinkercad.com/"
+	},
+	{
+		"id": 26,
+		"nome": "Typescript",
+		"link": "https://www.typescriptlang.org/"
+	},
+	{
+		"id": 27,
+		"nome": "Unity",
+		"link": "https://unity.com/"
 	}
 ]

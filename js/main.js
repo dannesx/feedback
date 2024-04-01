@@ -1,44 +1,38 @@
 import getForm from './functions/getForm.js'
 import defaultText from './modules/defaultText.js'
 
-const baseUrl = "https://dannesx.github.io/feedback/db/"
+const baseUrl = 'https://dannesx.github.io/feedback/db/'
 let professores
 let ferramentas
 
 const gerarTextoBtn = document.querySelector('#gerar-texto')
-const limparCamposBtn = document.querySelector('#limpar-campos')
-const temaInput = document.querySelector('#tema')
-const textareas = document.querySelectorAll('textarea.form-control')
+const ferramentaInput = document.querySelector('#ferramenta')
 const alert = document.querySelector('.alert')
 
 gerarTextoBtn.addEventListener('click', () => {
-	let form = getForm()
-	let temConteudo = []
+	const form = getForm()
+	form.ferramenta = ferramentas.filter(item => item.id == form.ferramenta)[0]
 
-	textareas.forEach(txt =>
-		txt.value !== '' ? temConteudo.push(true) : temConteudo.push(false)
-	)
+	const text = defaultText(form)
 
-	let professor = professores[form.prof - 1]
-	let ferramenta = ferramentas[form.ferramenta - 1]
-
-	delete form.prof
-	delete form.ferramenta
-
-	let text = defaultText({ ...form, professor, ferramenta, temConteudo })
 	navigator.clipboard.writeText(text)
 	alert.classList.add('show')
 	setTimeout(() => alert.classList.remove('show'), 2000)
 })
 
-limparCamposBtn.addEventListener('click', () => {
-	temaInput.value = ''
-	textareas.forEach(txt => (txt.value = ''))
-})
+window.addEventListener('DOMContentLoaded', async () => {
+	gerarTextoBtn.setAttribute('disabled', true)
+	professores = await fetch(`${baseUrl}/professores.json`).then(res =>
+		res.json()
+	)
+	ferramentas = await fetch(`${baseUrl}/ferramentas.json`).then(res =>
+		res.json()
+	)
 
-window.addEventListener("load", async () => {
-	gerarTextoBtn.setAttribute("disabled", true)
-	professores = await fetch(`${baseUrl}/professores.json`).then(res => res.json())
-	ferramentas = await fetch(`${baseUrl}/ferramentas.json`).then(res => res.json())
-	gerarTextoBtn.removeAttribute("disabled")
+	gerarTextoBtn.removeAttribute('disabled')
+
+	ferramentas.map(
+		el =>
+			(ferramentaInput.innerHTML += `<option value="${el.id}">${el.nome}</option>`)
+	)
 })
