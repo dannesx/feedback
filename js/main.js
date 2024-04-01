@@ -1,8 +1,7 @@
 import getForm from './functions/getForm.js'
 import defaultText from './modules/defaultText.js'
 
-const baseUrl = 'https://dannesx.github.io/feedback/db/'
-let professores
+const baseUrl = 'https://dannesx.github.io/feedback/db'
 let ferramentas
 
 const gerarTextoBtn = document.querySelector('#gerar-texto')
@@ -22,9 +21,7 @@ gerarTextoBtn.addEventListener('click', () => {
 
 window.addEventListener('DOMContentLoaded', async () => {
 	gerarTextoBtn.setAttribute('disabled', true)
-	professores = await fetch(`${baseUrl}/professores.json`).then(res =>
-		res.json()
-	)
+
 	ferramentas = await fetch(`${baseUrl}/ferramentas.json`).then(res =>
 		res.json()
 	)
