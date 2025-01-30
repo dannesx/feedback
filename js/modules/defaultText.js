@@ -4,12 +4,13 @@ export default function defaultText({
 	aula,
 	desafio,
 	recomendada,
+	desafioPortal,
 }) {
-	return `⭐ *${temaAula ? `Tema: ${temaAula}` : 'Resumo da Aula'}* ⭐
+	return `⭐ *${temaAula ? temaAula : 'Resumo da Aula'}* ⭐
 ${aula}
 	
 📢 *Desafio da Semana* 📢
-${desafio}${recomendada ? `\n🚨 *Extra:* ${recomendada}` : ""}
+${desafioPortal ? "Desafio publicado no portal: https://portal.ctrlplay.com.br/" : desafio}${recomendada ? `\n🚨 *Extra:* ${recomendada}` : ""}
 	
 🧰 *Ferramenta:* ${ferramenta.nome}
 🔗 *Link:* ${ferramenta.link}

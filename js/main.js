@@ -8,6 +8,7 @@ let ferramentas
 const gerarTextoBtn = document.querySelector('#gerar-texto')
 const ferramentaInput = document.querySelector('#ferramenta')
 const alert = document.querySelector('.alert')
+const desafioPortal = document.querySelector('#desafio-portal')
 
 gerarTextoBtn.addEventListener('click', () => {
 	const form = getForm()
@@ -26,6 +27,16 @@ gerarTextoBtn.addEventListener('click', () => {
 	navigator.clipboard.writeText(text)
 	alert.classList.add('show')
 	setTimeout(() => alert.classList.remove('show'), 2000)
+})
+
+desafioPortal.addEventListener('input', () => {
+	const desafio = document.querySelector("#desafio")
+	if (desafioPortal.checked) {
+		desafio.disabled = true
+		desafio.value = ""
+	} else {
+		desafio.disabled = false
+	}
 })
 
 window.addEventListener('DOMContentLoaded', async () => {

@@ -1,125 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Feedback - Ctrl+Play</title>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-		/>
-		<link
-			rel="icon"
-			href="https://ctrlplay.com.br/wp-content/uploads/2021/05/cropped-favicon-32x32.png"
-			sizes="32x32"
-		/>
-		<link
-			rel="icon"
-			href="https://ctrlplay.com.br/wp-content/uploads/2021/05/cropped-favicon-192x192.png"
-			sizes="192x192"
-		/>
-	</head>
-	<body class="bg-dark">
-		<div class="d-grid justify-content-end">
-			<a href="ae.html" class="btn btn-link">Aula Experimental</a>
-		</div>
-		<main class="container-md">
-			<div class="row d-flex justify-content-center">
-				<div class="col-sm-10 col-md-8">
-					<form
-						class="mx-auto bg-light px-5 py-4 mt-3 mb-5 rounded form-switch"
-					>
-						<h1 class="mb-4 text-center">Feedback ✨🚀</h1>
-						<div class="row">
-							<div class="col-12 col-md mb-2">
-								<label for="tema" class="form-label">Tema da aula</label>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Feedback - Ctrl+Play</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://ctrlplay.com.br/wp-content/uploads/2021/05/cropped-favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="https://ctrlplay.com.br/wp-content/uploads/2021/05/cropped-favicon-192x192.png"
+      sizes="192x192"
+    />
+  </head>
+  <body class="bg-dark">
+    <div class="d-grid justify-content-end">
+      <a href="ae.html" class="btn btn-link">Aula Experimental</a>
+    </div>
+    <main class="container-md">
+      <div class="row d-flex justify-content-center">
+        <div class="col-sm-10 col-md-8">
+          <form
+            class="mx-auto bg-light px-5 py-4 mt-3 mb-5 rounded form-switch"
+          >
+            <h1 class="mb-4 text-center">Feedback ✨🚀</h1>
+            <div class="row">
+              <div class="col-12 col-md mb-2">
+                <label for="tema" class="form-label">Tema da aula</label>
+                <input
+                  type="text"
+                  name="tema"
+                  id="tema"
+                  class="form-control"
+                  placeholder="A última aula foi sobre..."
+                />
+              </div>
+
+              <div class="col-12 col-md-6 mb-2">
+                <label for="ferramenta" class="form-label">Ferramenta</label>
+                <select name="ferramenta" id="ferramenta" class="form-select">
+                  <option selected>---</option>
+                </select>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="row mb-3">
+              <div class="col">
+                <label class="form-label">Resumo sobre a aula</label>
+                <textarea
+                  id="aula"
+                  class="form-control"
+                  placeholder="Descreva sua aula em um parágrafo simples"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col">
+                <label class="form-label">Desafio</label>
+                <textarea
+                  id="desafio"
+                  class="form-control"
+                  placeholder="Qual o desafio para a próxima aula?"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="col-12 mb-3">
+							<div class="form-check form-switch">
 								<input
-									type="text"
-									name="tema"
-									id="tema"
-									class="form-control"
-									placeholder="A última aula foi sobre..."
+									class="form-check-input"
+									type="checkbox"
+									role="switch"
+									id="desafio-portal"
 								/>
-							</div>
-
-							<div class="col-12 col-md-6 mb-2">
-								<label for="ferramenta" class="form-label">Ferramenta</label>
-								<select name="ferramenta" id="ferramenta" class="form-select">
-									<option selected>---</option>
-								</select>
-							</div>
-						</div>
-
-						<hr />
-
-						<div class="row mb-3">
-							<div class="col">
-								<label class="form-label">Resumo sobre a aula</label>
-								<textarea
-									id="aula"
-									class="form-control"
-									placeholder="Descreva sua aula em um parágrafo simples"
-								></textarea>
-							</div>
-						</div>
-
-						<div class="row mb-3">
-							<div class="col">
-								<label class="form-label">Desafio</label>
-								<textarea
-									id="desafio"
-									class="form-control"
-									placeholder="Qual o desafio para a próxima aula?"
-								></textarea>
-							</div>
-						</div>
-
-						<div class="row mb-4 g-3">
-							<div class="col-12">
-								<label class="form-label">Prática Recomendada</label>
-								<textarea
-									id="recomendada"
-									class="form-control"
-									placeholder="Tem alguma atividade para recomendar aos alunos?"
-								></textarea>
-							</div>
-
-							<div class="col-12">
-								<div class="form-check form-switch">
-									<input class="form-check-input" type="checkbox" role="switch" id="versao-antiga">
-									<label class="form-check-label" for="versao-antiga">Versão Antiga</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="row mb-3">
-							<div class="d-grid col-6">
-								<button
-									id="limpar-campos"
-									class="btn btn-outline-danger"
-									type="reset"
+								<label class="form-check-label" for="desafio-portal"
+									>Utilizar desafio pelo portal</label
 								>
-									Limpar campos
-								</button>
-							</div>
-							<div class="d-grid col-6 mx-auto">
-								<button id="gerar-texto" class="btn btn-primary" type="button">
-									Gerar texto
-								</button>
 							</div>
 						</div>
-					</form>
-					<!-- <p class="invisible" style="display: none" id="texto"></p> -->
-				</div>
-			</div>
-		</main>
-		<div
-			class="alert alert-success position-fixed end-0 top-0 m-4 fade"
-			role="alert"
-		>
-			Texto copiado para a área de transferência!
-		</div>
-		<script type="module" src="js/main.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-	</body>
+
+            <div class="row mb-4 g-3">
+              <div class="col-12">
+                <label class="form-label">Prática Recomendada</label>
+                <textarea
+                  id="recomendada"
+                  class="form-control"
+                  placeholder="Tem alguma atividade para recomendar aos alunos?"
+                ></textarea>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="versao-antiga"
+                  />
+                  <label class="form-check-label" for="versao-antiga"
+                    >Versão Antiga</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="d-grid col-6">
+                <button
+                  id="limpar-campos"
+                  class="btn btn-outline-danger"
+                  type="reset"
+                >
+                  Limpar campos
+                </button>
+              </div>
+              <div class="d-grid col-6 mx-auto">
+                <button id="gerar-texto" class="btn btn-primary" type="button">
+                  Gerar texto
+                </button>
+              </div>
+            </div>
+          </form>
+          <!-- <p class="invisible" style="display: none" id="texto"></p> -->
+        </div>
+      </div>
+    </main>
+    <div
+      class="alert alert-success position-fixed end-0 top-0 m-4 fade"
+      role="alert"
+    >
+      Texto copiado para a área de transferência!
+    </div>
+    <script type="module" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
