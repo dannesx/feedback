@@ -9,6 +9,7 @@ const gerarTextoBtn = document.querySelector('#gerar-texto')
 const ferramentaInput = document.querySelector('#ferramenta')
 const alert = document.querySelector('.alert')
 const desafioPortal = document.querySelector('#desafio-portal')
+const form = document.querySelector('form')
 
 gerarTextoBtn.addEventListener('click', () => {
 	const form = getForm()
@@ -52,4 +53,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 		el =>
 			(ferramentaInput.innerHTML += `<option value="${el.id}">${el.nome}</option>`)
 	)
+})
+
+window.addEventListener("reset", () => {
+	desafioPortal.checked = false
+	document.querySelector("#desafio").disabled = false
 })
