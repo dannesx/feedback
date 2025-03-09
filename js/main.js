@@ -1,5 +1,7 @@
 import getForm from './functions/getForm.js'
 import defaultText from './modules/defaultText.js'
+
+const baseUrl = 'https://dannesx.github.io/feedback/db'
 let ferramentas
 
 const gerarTextoBtn = document.querySelector('#gerar-texto')
@@ -31,7 +33,7 @@ desafioPortal.addEventListener('input', () => {
 window.addEventListener('DOMContentLoaded', async () => {
 	gerarTextoBtn.setAttribute('disabled', true)
 
-	ferramentas = await fetch(`../db/ferramentas.json`).then(res =>
+	ferramentas = await fetch(`${baseUrl}/ferramentas.json`).then(res =>
 		res.json()
 	)
 

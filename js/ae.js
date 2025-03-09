@@ -1,4 +1,6 @@
 import aeText from './modules/aeText.js'
+
+const baseUrl = 'https://dannesx.github.io/feedback/db'
 let professores
 
 const gerarTextoBtn = document.querySelector('#gerar-texto')
@@ -24,7 +26,7 @@ form.addEventListener('submit', e => {
 window.addEventListener('DOMContentLoaded', async () => {
 	gerarTextoBtn.setAttribute('disabled', true)
 
-	professores = await fetch(`../db/professores.json`).then(res =>
+	professores = await fetch(`${baseUrl}/professores.json`).then(res =>
 		res.json()
 	)
 
