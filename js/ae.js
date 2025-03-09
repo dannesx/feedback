@@ -1,17 +1,37 @@
-import getWhatsapp from './functions/getWhatsapp.js'
-import whatsappText from './modules/whatsappText.js'
+import aeText from './modules/aeText.js'
+let professores
 
-const whatsappBtn = document.querySelector('#whatsapp')
-const limparCamposBtn = document.querySelector('#limpar-campos')
+const gerarTextoBtn = document.querySelector('#gerar-texto')
+const professorInput = document.querySelector('#professor')
 const alert = document.querySelector('.alert')
+const form = document.querySelector('form')
 
-whatsappBtn.addEventListener('click', e => {
+form.addEventListener('submit', e => {
 	e.preventDefault()
-	let form = getWhatsapp()
+	const data = Object.fromEntries(new FormData(form).entries())
+	data.professor = professores.filter(
+		item => item.id == data.professor
+	)[0].nome
 
-	let text = whatsappText(form)
+	console.log(data)
+	let text = aeText(data)
 
 	navigator.clipboard.writeText(text)
 	alert.classList.add('show')
 	setTimeout(() => alert.classList.remove('show'), 2000)
+})
+
+window.addEventListener('DOMContentLoaded', async () => {
+	gerarTextoBtn.setAttribute('disabled', true)
+
+	professores = await fetch(`../db/professores.json`).then(res =>
+		res.json()
+	)
+
+	gerarTextoBtn.removeAttribute('disabled')
+
+	professores.map(
+		el =>
+			(professorInput.innerHTML += `<option value="${el.id}">${el.nome}</option>`)
+	)
 })

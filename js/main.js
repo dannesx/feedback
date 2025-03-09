@@ -1,29 +1,17 @@
 import getForm from './functions/getForm.js'
 import defaultText from './modules/defaultText.js'
-import defaultOldText from './modules/defaultOldText.js'
-
-const baseUrl = 'https://dannesx.github.io/feedback/db'
 let ferramentas
 
 const gerarTextoBtn = document.querySelector('#gerar-texto')
 const ferramentaInput = document.querySelector('#ferramenta')
 const alert = document.querySelector('.alert')
 const desafioPortal = document.querySelector('#desafio-portal')
-const form = document.querySelector('form')
 
 gerarTextoBtn.addEventListener('click', () => {
 	const form = getForm()
 	form.ferramenta = ferramentas.filter(item => item.id == form.ferramenta)[0]
 
-	const versaoAntiga = document.querySelector('#versao-antiga').checked
-	let text = ""
-
-	if (versaoAntiga) {
-		text = defaultOldText(form)
-	} else {
-		text = defaultText(form)
-	}
-
+	let text = defaultText(form)
 
 	navigator.clipboard.writeText(text)
 	alert.classList.add('show')
@@ -43,7 +31,7 @@ desafioPortal.addEventListener('input', () => {
 window.addEventListener('DOMContentLoaded', async () => {
 	gerarTextoBtn.setAttribute('disabled', true)
 
-	ferramentas = await fetch(`${baseUrl}/ferramentas.json`).then(res =>
+	ferramentas = await fetch(`../db/ferramentas.json`).then(res =>
 		res.json()
 	)
 
