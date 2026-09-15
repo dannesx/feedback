@@ -4,7 +4,7 @@ import worker from '../worker/index.mjs'
 
 const origin = 'https://dannesx.github.io'
 const limiter = result => ({ idFromName: key => key, get: () => ({ fetch: async () => Response.json(result) }) })
-const env = { ALLOWED_ORIGINS: origin, GEMINI_API_KEY: 'test-secret', SUMMARY_RATE_LIMITER: limiter({ success: true }) }
+const env = { ALLOWED_ORIGINS: origin, GEMINI_API_KEY: 'test-secret', DAILY_SUMMARY_LIMITER: limiter({ success: true }), SUMMARY_RATE_LIMITER: limiter({ success: true }) }
 const request = (body = { tema: 'Laços', ferramenta: 'Python' }, options = {}) => new Request('https://example.com/resumo', {
  method: 'POST', headers: { Origin: origin, 'CF-Connecting-IP': '192.0.2.1', 'Content-Type': 'application/json' }, body: JSON.stringify(body), ...options,
 })
@@ -56,4 +56,13 @@ test('provider quota, failures and blocked output are handled without leaking de
  assert.match(await response.text(), /demorou/)
  mock.mock.mockImplementation(async () => Response.json({ candidates: [{ finishReason: 'SAFETY', content: { parts: [{ text: summary }] } }] }))
  assert.equal((await worker.fetch(request(), env)).status, 502)
+})
+
+test('global budget blocks provider calls and returns Retry-After', async t => {
+ const mock = t.mock.method(globalThis, 'fetch', () => assert.fail('provider must not be called'))
+ const response = await worker.fetch(request(), { ...env, DAILY_SUMMARY_LIMITER: limiter({ success: false, retryAfter: 120 }) })
+ assert.equal(response.status, 429)
+ assert.equal(response.headers.get('Retry-After'), '120')
+ assert.match((await response.json()).error, /70 resumos/)
+ assert.equal(mock.mock.callCount(), 0)
 })

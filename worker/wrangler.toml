@@ -13,3 +13,11 @@ class_name = "HourlySummaryLimit"
 [[migrations]]
 tag = "v1-hourly-limit"
 new_sqlite_classes = ["HourlySummaryLimit"]
+
+[[durable_objects.bindings]]
+name = "DAILY_SUMMARY_LIMITER"
+class_name = "DailySummaryLimit"
+
+[[migrations]]
+tag = "v2-daily-limit"
+new_sqlite_classes = ["DailySummaryLimit"]

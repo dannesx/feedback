@@ -1,3 +1,5 @@
+import { checkDailyLimit } from './daily-limit.mjs'
+export { DailySummaryLimit } from './daily-limit.mjs'
 import { checkHourlyLimit } from './hourly-limit.mjs'
 export { HourlySummaryLimit } from './hourly-limit.mjs'
 
@@ -64,14 +66,19 @@ export default {
 			if (!tema || tema.length > 200 || !ferramenta || ferramenta === '---' || ferramenta.length > 80) {
 				return json({ error: 'Informe um tema de até 200 caracteres e uma ferramenta de até 80 caracteres.' }, 400)
 			}
-			if (!env.GEMINI_API_KEY || !env.SUMMARY_RATE_LIMITER) return json({ error: 'A geração de resumos ainda não foi configurada.' }, 503)
+			if (!env.GEMINI_API_KEY || !env.SUMMARY_RATE_LIMITER || !env.DAILY_SUMMARY_LIMITER) return json({ error: 'A geração de resumos ainda não foi configurada.' }, 503)
 			const ip = request.headers.get('CF-Connecting-IP')
 			if (!ip) return json({ error: 'Não foi possível identificar a conexão.' }, 400)
 			const { success, retryAfter } = await checkHourlyLimit(env.SUMMARY_RATE_LIMITER, ip)
 			if (!success) return json({
-				error: `Limite de 5 pedidos por hora atingido. Tente novamente em ${Math.ceil(retryAfter / 60)} min.`,
+				error: `Limite de 7 pedidos por hora atingido. Tente novamente em ${Math.ceil(retryAfter / 60)} min.`,
 				retryAfter,
 			}, 429, { 'Retry-After': String(retryAfter) })
+			const daily = await checkDailyLimit(env.DAILY_SUMMARY_LIMITER)
+			if (!daily.success) return json({
+				error: 'O limite diário de 70 resumos foi atingido. Tente novamente após a meia-noite (horário de São Paulo).',
+				retryAfter: daily.retryAfter,
+			}, 429, { 'Retry-After': String(daily.retryAfter) })
 			const signal = AbortSignal.timeout(35000)
 			for (let attempt = 0; attempt < 2; attempt++) {
 				const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(env.GEMINI_MODEL || 'gemini-3.1-flash-lite')}:generateContent`, {

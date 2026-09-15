@@ -8,7 +8,7 @@ export class HourlySummaryLimit {
 		const result = await this.storage.transaction(async storage => {
 			const now = Date.now()
 			const timestamps = (await storage.get('requests') || []).filter(time => time > now - HOUR)
-			if (timestamps.length >= 5) {
+			if (timestamps.length >= 7) {
 				return { success: false, retryAfter: Math.max(1, Math.ceil((timestamps[0] + HOUR - now) / 1000)) }
 			}
 			timestamps.push(now)

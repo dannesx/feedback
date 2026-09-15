@@ -20,7 +20,7 @@ O GitHub Pages não executa código de servidor. A API em `worker/` usa Cloudfla
 4. Publique os arquivos estáticos no GitHub Pages normalmente. Se o domínio mudar, ajuste `ALLOWED_ORIGINS` no `worker/wrangler.toml` e publique o Worker novamente.
 5. Teste com tema “Laços de repetição” e ferramenta “Python”. Revise a sugestão, edite se necessário e use **Gerar texto** para copiar o feedback completo.
 
-O Worker valida os dados, limita a 5 pedidos nos últimos 60 minutos por IP, com contador persistente em Durable Objects, usa timeout e tenta no máximo duas gerações para cumprir o tamanho. Erros preservam o resumo existente. CORS restringe navegadores ao domínio configurado; não é autenticação e não impede chamadas diretas. Use cotas do provedor para controlar o consumo; o rate limit não é um teto global de gastos.
+O Worker valida os dados, limita a 7 pedidos nos últimos 60 minutos por IP, com contador persistente em Durable Objects, usa timeout e tenta no máximo duas gerações para cumprir o tamanho. Erros preservam o resumo existente. CORS restringe navegadores ao domínio configurado; não é autenticação e não impede chamadas diretas. Use cotas do provedor para controlar o consumo; o rate limit não é um teto global de gastos.
 
 ### Chave como secret do GitHub
 
@@ -41,4 +41,10 @@ Para desenvolver o próprio Worker localmente, crie `worker/.dev.vars` com `GEMI
 
 ### Limite por IP
 
-Cada pedido válido de geração consome uma das 5 vagas, mesmo se a IA falhar. A segunda tentativa interna para ajustar o tamanho não consome outra vaga. Pedidos bloqueados retornam HTTP 429 com `Retry-After` em segundos e não estendem a espera. O IP vem de `CF-Connecting-IP`; o contador usa um hash dele. Pedidos simultâneos são serializados e o estado expira após uma hora sem pedidos aceitos. Pessoas na mesma conexão pública compartilham a cota. No desenvolvimento, o proxy usa o IP público da máquina que executa `npm run dev`.
+Cada pedido válido de geração consome uma das 7 vagas, mesmo se a IA falhar. A segunda tentativa interna para ajustar o tamanho não consome outra vaga. Pedidos bloqueados retornam HTTP 429 com `Retry-After` em segundos e não estendem a espera. O IP vem de `CF-Connecting-IP`; o contador usa um hash dele. Pedidos simultâneos são serializados e o estado expira após uma hora sem pedidos aceitos. Pessoas na mesma conexão pública compartilham a cota. No desenvolvimento, o proxy usa o IP público da máquina que executa `npm run dev`.
+
+### Limite global diário
+
+No máximo 70 pedidos de geração aceitos por dia para todo o site, somando todos os IPs e locais Cloudflare. Reinicia à meia-noite em `America/Sao_Paulo`. Um Durable Object único reserva cada vaga antes de chamar o Gemini, inclusive sob concorrência. Falhas da IA também consomem a vaga, evitando tentativas ilimitadas; cada pedido pode fazer até duas chamadas ao Gemini para ajustar o tamanho (até 140 chamadas por dia). O teto não equivale a 70 chamadas ao provedor.
+
+O limite por IP é verificado primeiro: pedidos bloqueados por IP não consomem a cota global. Um pedido bloqueado pela cota diária pode consumir a vaga por IP. Ao esgotar o limite diário, o Worker retorna 429 e `Retry-After`, sem chamar o Gemini. O contador começa na implantação; gerações anteriores não entram no total.
