@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feedback - AE Whatsapp</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-    />
     <link
       rel="icon"
       href="https://ctrlplay.com.br/wp-content/uploads/2021/05/cropped-favicon-32x32.png"
@@ -18,75 +14,67 @@
       href="https://ctrlplay.com.br/wp-content/uploads/2021/05/cropped-favicon-192x192.png"
       sizes="192x192"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.7.38/daisyui.css" rel="stylesheet" type="text/css" />
+    <link href="css/site.css" rel="stylesheet" />
     <script src="js/whatsapp.js" type="module" defer></script>
   </head>
-  <body class="container-lg bg-dark text-white" data-bs-theme="dark">
-    <header class="text-center my-4">
+  <body>
+    <main class="page-shell">
+    <header class="page-header">
       <h1>AE Whatsapp ✨🚀</h1>
+        <nav class="page-nav">
+          <a class="link" href="index.html">Voltar</a>
+
+          <a class="link" href="ae.html">Aula Experimental</a>
+        </nav>
     </header>
 
-    <form class="mx-auto" style="max-width: 650px">
-      <section class="row">
-        <div class="col-12 mb-1 d-flex justify-content-end gap-3">
-          <a href="index.html">Voltar</a>
+    <form>
+      <div class="form-section fields">
 
-          <a href="ae.html">Aula Experimental</a>
-        </div>
 
-        <div class="col-12 mb-3">
-          <label for="aluno" class="form-label">Aluno</label>
+        <div class="field field-wide">
+          <label for="aluno" class="field-label">Aluno</label>
           <input
             type="text"
             name="aluno"
             id="aluno"
-            class="form-control"
+            class="input"
             placeholder="Primeiro nome ou nome composto"
           />
         </div>
 
-        <div class="col-12 col-md-6 mb-3">
-          <label for="publicado" class="form-label">Link do Projeto <span class="text-secondary">Itch.io</span></label>
+        <div class="field">
+          <label for="publicado" class="field-label">Link do Projeto <span class="text-muted">Itch.io</span></label>
           <input
             type="text"
             name="publicado"
             id="publicado"
-            class="form-control"
+            class="input"
             placeholder="Link do projeto publicado"
           />
         </div>
 
-        <div class="col-12 col-md-6 mb-3">
-          <label for="arquivo" class="form-label">Arquivo <span class="text-secondary">Google Drive</span></label>
+        <div class="field">
+          <label for="arquivo" class="field-label">Arquivo <span class="text-muted">Google Drive</span></label>
           <input
             type="text"
             name="arquivo"
             id="arquivo"
-            class="form-control"
+            class="input"
             placeholder="Link do arquivo editável"
           />
         </div>
 
-        <div class="col-md-6 col-12 mb-3">
-          <button class="btn btn-danger w-100" type="reset">
-            Limpar campos
-          </button>
-        </div>
-
-        <div class="col-md-6 col-12 mb-3">
-          <button class="btn btn-primary w-100" id="gerar-texto" type="submit">
-            Gerar texto
-          </button>
-        </div>
-      </section>
+      </div>
+      <div class="actions">
+        <button class="btn btn-ghost" type="reset">Limpar campos</button>
+        <button class="btn btn-primary" id="gerar-texto" type="submit">Gerar texto</button>
+      </div>
     </form>
+    </main>
     <div
-      class="alert alert-success position-fixed end-0 top-0 m-4 fade"
+      class="alert alert-success copy-notice"
       role="alert"
     >
       Texto copiado para a área de transferência!

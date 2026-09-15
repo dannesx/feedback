@@ -1,7 +1,8 @@
+import './modules/lessonSummary.js'
 import getForm from './functions/getForm.js'
 import defaultText from './modules/defaultText.js'
 
-const baseUrl = 'https://dannesx.github.io/feedback/db'
+const baseUrl = './db'
 let ferramentas
 
 const gerarTextoBtn = document.querySelector('#gerar-texto')

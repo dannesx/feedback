@@ -1,0 +1,15 @@
+name = "feedback-resumo"
+main = "index.mjs"
+compatibility_date = "2026-09-15"
+
+[vars]
+ALLOWED_ORIGINS = "https://dannesx.github.io"
+GEMINI_MODEL = "gemini-3.1-flash-lite"
+
+[[durable_objects.bindings]]
+name = "SUMMARY_RATE_LIMITER"
+class_name = "HourlySummaryLimit"
+
+[[migrations]]
+tag = "v1-hourly-limit"
+new_sqlite_classes = ["HourlySummaryLimit"]
